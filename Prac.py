@@ -15,9 +15,10 @@ def loginButton():
     # Hash the input and compare it to the hashed master password.
     if encryption(passCode.get()) == hashedMasterPass:
         create_new_window()
+
         
     else:
-        messagebox.showinfo(" ", "Incorrect Password")
+        messagebox.showinfo("Error ", "You're on fraud alert 🚨")
 
 def create_new_window():
     new_window = Toplevel(root)
@@ -33,7 +34,7 @@ def create_new_window():
     optionButton2 = Button(new_window, text='2', width=1, height=1,bg='#FBEED3',command=clickOption2).place(x=430,y=300)
     optionButton3 = Button(new_window, text='3', width=1, height=1,bg='#FBEED3',command=clickOption3).place(x=480,y=300)
     global quickBallImg
-    quickBallImg = PhotoImage(file='quickball.png')
+    quickBallImg = PhotoImage(file='/Users/jeg/Desktop/Python/Password-Manager/PassImages/quickball.png')
     Label(new_window, image=quickBallImg, bg='#F1B46D').place(x=5, y=150)  # Corrected the background color reference
     Label(new_window, image=quickBallImg, bg='#F1B46D').place(x=750, y=150)  # Corrected the background color reference
 
@@ -58,7 +59,7 @@ root.geometry('925x500+300+200')
 root.configure(bg="#fff")
 root.resizable(False,False)
 
-img = PhotoImage(file="drag.png")
+img = PhotoImage(file="/Users/jeg/Desktop/Python/Password-Manager/PassImages/drag.png")
 Label(root, image=img, bg="white").place(x=50, y=20)
 
 frame = Frame(root, width=350, height=350, bg="orange")
